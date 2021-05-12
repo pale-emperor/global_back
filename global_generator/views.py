@@ -5,6 +5,7 @@ from django.http import HttpResponse
  
 from PIL import Image, ImageDraw, ImageFont
 from django.conf import settings
+import json
 import random
 import math
 import logging
@@ -164,7 +165,7 @@ def print_maps(draw, _map_dict, _size=15, draw_id=False):
                             fill=(0,0,0,128))
 
 
-def index(request):
+def generate_global(request):
 
     global global_id
     global tiers
@@ -283,4 +284,21 @@ def index(request):
     logging.debug(f'Save jpg to: {settings.MEDIA_DIR}/global_out.jpg')
     # Out image
     im.save(settings.MEDIA_DIR+'/global_out.jpg', quality=100)
+    # Save to json
+    map_file = open(settings.MEDIA_DIR+"/map.json", "w")
+    map_file.writelines(str(json.dumps(map_dict)))
+    map_file.close()
+
     return render(request, 'map/index.html')
+
+def index(request):
+    return render(request, 'map/index.html')
+
+def outjson(request):
+    map_file = open(settings.MEDIA_DIR+"/map.json", "r")
+    # print(settings.MEDIA_DIR+"/map.json")
+    content = map_file.read()
+    print(content[1])
+    context = {'map_info':content}
+    print(context)
+    return render(request, 'map/json.html', context)
