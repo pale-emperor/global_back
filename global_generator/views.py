@@ -92,6 +92,7 @@ debug = False
 # Get image center
 center = (W/2, W/2, H/2, H/2)
 
+
 def maps_info(map_dict):
     for tier in range(tiers):
         logging.debug(f'Tier: {tier}')
@@ -120,10 +121,11 @@ def draw_tier(draw, _tier):
     _size = (_tier + 1)*R
     phase = _tier//phases
     logging.debug(f'Drawing {_tier} with size: {_size}')
-    draw.ellipse((W/2-_size, H/2-_size, W/2+_size, H/2+_size), fill=None, outline=(phase_color[phase]), width=2)
+    draw.ellipse((W/2-_size, H/2-_size, W/2+_size, H/2+_size), fill=None, outline=(phase_color[phase]), width=1)
 
 
 def calculate_paths(_map_dict):
+    paths = []
     logging.debug(f'============================= Calculate paths =============================')
     # Run for all maps
     for _map in get_map_with_coords(_map_dict):
@@ -131,7 +133,33 @@ def calculate_paths(_map_dict):
             _len = get_length(_map[0],__map[0])
             if (_len) <= 100 and (_map[1] != __map[1]):
                 logging.debug(f'Length between {_map[1]} and {__map[1]} is {_len}')
-                _map_dict
+                paths.append( 
+                        (
+                        {
+                        'map1':{'id':_map[1], 'coords':_map[0]}, 
+                        'map2':{'id':__map[1], 'coords':__map[0]},
+                        'length':_len
+                        }
+                        )
+                    )
+    return paths
+
+
+def print_paths(draw, _paths):
+    logging.debug(f'Drawing paths\n=========================================================')
+    logging.debug(f'{_paths}')
+
+    for _path in _paths:
+        logging.debug(f'Path:{_path}')
+        print(_path.keys())
+        map1_coords = _path['map1']['coords']
+        map2_coords = _path['map2']['coords']
+
+        logging.debug(f'map1_coords:{map1_coords}')
+        logging.debug(f'map2_coords:{map2_coords}')
+        logging.debug(f'{map1_coords},{map1_coords}, {map2_coords},{map2_coords}')
+        draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(255,255,255), width=2)
+
 
 def print_maps(draw, _map_dict, _size=15, draw_id=False):
     logging.debug(f'============================= Starting drawing maps =============================')
@@ -139,7 +167,31 @@ def print_maps(draw, _map_dict, _size=15, draw_id=False):
         for _map in _map_dict[_tiers]:
             logging.debug(f'Drawing map : {_map}')
             # Drawing map
-            draw.ellipse(
+            try:
+                if _map[0]['unique'] == True:
+                    logging.debug(f'Map UNIQUE!!! : {_map}')
+                    draw.ellipse(
+                            (
+                            int(_map[0]['Coordinates'][0]-_size),
+                            int(_map[0]['Coordinates'][1]-_size),
+                            int(_map[0]['Coordinates'][0]+_size),
+                            int(_map[0]['Coordinates'][1]+_size)
+                            ),
+                            fill=(0,0,0),
+                            # fill=map_color[_map[0]['map_level']],
+                            outline=(255, 255, 255), width=2)
+                else:
+                    draw.ellipse(
+                        (
+                        int(_map[0]['Coordinates'][0]-_size),
+                        int(_map[0]['Coordinates'][1]-_size),
+                        int(_map[0]['Coordinates'][0]+_size),
+                        int(_map[0]['Coordinates'][1]+_size)
+                        ),
+                        fill=map_color[_map[0]['map_level']],
+                        outline=(255, 255, 255), width=4)
+            except:
+                draw.ellipse(
                         (
                         int(_map[0]['Coordinates'][0]-_size),
                         int(_map[0]['Coordinates'][1]-_size),
@@ -148,6 +200,7 @@ def print_maps(draw, _map_dict, _size=15, draw_id=False):
                         ),
                         fill=map_color[_map[0]['map_level']],
                         outline=(255, 255, 255), width=2)
+            
             # Drawing ID
             if draw_id:
                 id_offset = 0
@@ -279,8 +332,11 @@ def generate_global(request):
 
     logging.debug(maps_info(map_dict))
 
-    calculate_paths(map_dict)
+    paths = calculate_paths(map_dict)
+
+    print_paths(draw, paths)
     print_maps(draw, map_dict,draw_id=True)
+    
     logging.debug(f'Save jpg to: {settings.MEDIA_DIR}/global_out.jpg')
     # Out image
     im.save(settings.MEDIA_DIR+'/global_out.jpg', quality=100)

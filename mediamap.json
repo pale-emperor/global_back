@@ -1,0 +1,2777 @@
+{
+    "0": [],
+    "1": [
+        [
+            {
+                "id": 1,
+                "Coordinates": [
+                    1793.0185772728678,
+                    1075.5657110072116
+                ],
+                "map_tier": 2,
+                "degree": 178,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 2,
+                "Coordinates": [
+                    1811.0893312049081,
+                    1014.5598681290754
+                ],
+                "map_tier": 2,
+                "degree": 149,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 3,
+                "Coordinates": [
+                    1989.2011950372034,
+                    973.4395043081108
+                ],
+                "map_tier": 2,
+                "degree": 57,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 4,
+                "Coordinates": [
+                    1904.5154246026402,
+                    1206.1117463261915
+                ],
+                "map_tier": 2,
+                "degree": 263,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 5,
+                "Coordinates": [
+                    1874.4661899401265,
+                    961.3803693391791
+                ],
+                "map_tier": 2,
+                "degree": 111,
+                "map_level": 0
+            }
+        ]
+    ],
+    "2": [
+        [
+            {
+                "id": 6,
+                "Coordinates": [
+                    2081.6279900909894,
+                    979.0036225814363
+                ],
+                "map_tier": 3,
+                "degree": 32,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 7,
+                "Coordinates": [
+                    1893.475244287611,
+                    891.2665563104301
+                ],
+                "map_tier": 3,
+                "degree": 98,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 8,
+                "Coordinates": [
+                    2006.5252481856548,
+                    1249.8153610806066
+                ],
+                "map_tier": 3,
+                "degree": 297,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 9,
+                "Coordinates": [
+                    1735.0730498156336,
+                    1033.8925328386515
+                ],
+                "map_tier": 3,
+                "degree": 166,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 10,
+                "Coordinates": [
+                    2086.6922265371554,
+                    1172.3990099763607
+                ],
+                "map_tier": 3,
+                "degree": 331,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 11,
+                "Coordinates": [
+                    1748.7004288229823,
+                    1163.548383270389
+                ],
+                "map_tier": 3,
+                "degree": 206,
+                "map_level": 1,
+                "unique": false
+            }
+        ]
+    ],
+    "3": [
+        [
+            {
+                "id": 12,
+                "Coordinates": [
+                    2142.2563020495404,
+                    1203.198679968481
+                ],
+                "map_tier": 4,
+                "degree": 331,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 13,
+                "Coordinates": [
+                    1689.6911976471572,
+                    972.6052417223634
+                ],
+                "map_tier": 4,
+                "degree": 155,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 14,
+                "Coordinates": [
+                    1777.899215118022,
+                    1290.6730772610458
+                ],
+                "map_tier": 4,
+                "degree": 236,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 15,
+                "Coordinates": [
+                    1893.4374728637492,
+                    827.2744360005329
+                ],
+                "map_tier": 4,
+                "degree": 96,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 16,
+                "Coordinates": [
+                    2152.148022177414,
+                    976.6410412889732
+                ],
+                "map_tier": 4,
+                "degree": 24,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 17,
+                "Coordinates": [
+                    2083.343674932109,
+                    885.3345885721185
+                ],
+                "map_tier": 4,
+                "degree": 50,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 18,
+                "Coordinates": [
+                    1942.147812274699,
+                    1333.1506526915496
+                ],
+                "map_tier": 4,
+                "degree": 275,
+                "map_level": 0
+            }
+        ]
+    ],
+    "4": [
+        [
+            {
+                "id": 19,
+                "Coordinates": [
+                    1859.3900838215682,
+                    768.1890123166245
+                ],
+                "map_tier": 5,
+                "degree": 101,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 20,
+                "Coordinates": [
+                    2216.5490766520525,
+                    966.1654748503164
+                ],
+                "map_tier": 5,
+                "degree": 21,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 21,
+                "Coordinates": [
+                    1634.5007147049705,
+                    940.7526945493519
+                ],
+                "map_tier": 5,
+                "degree": 154,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 22,
+                "Coordinates": [
+                    2235.2793658154787,
+                    1118.7114384933998
+                ],
+                "map_tier": 5,
+                "degree": 353,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 23,
+                "Coordinates": [
+                    2128.3952209734553,
+                    1319.7312784237042
+                ],
+                "map_tier": 5,
+                "degree": 311,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 24,
+                "Coordinates": [
+                    1611.7884163593894,
+                    1156.8457786022473
+                ],
+                "map_tier": 5,
+                "degree": 194,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 25,
+                "Coordinates": [
+                    1711.6047790265447,
+                    1319.731278423704
+                ],
+                "map_tier": 5,
+                "degree": 229,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 26,
+                "Coordinates": [
+                    2132.547369078696,
+                    843.9422319071807
+                ],
+                "map_tier": 5,
+                "degree": 48,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 27,
+                "Coordinates": [
+                    1996.8457786022473,
+                    771.7884163593894
+                ],
+                "map_tier": 5,
+                "degree": 76,
+                "map_level": 0
+            }
+        ]
+    ],
+    "5": [
+        [
+            {
+                "id": 28,
+                "Coordinates": [
+                    1596.7440198180211,
+                    878.0072451628726
+                ],
+                "map_tier": 6,
+                "degree": 148,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 29,
+                "Coordinates": [
+                    1540.9116540007994,
+                    1040.1562092956237
+                ],
+                "map_tier": 6,
+                "degree": 174,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 30,
+                "Coordinates": [
+                    1926.652446689035,
+                    698.8815844345049
+                ],
+                "map_tier": 6,
+                "degree": 89,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 31,
+                "Coordinates": [
+                    2144.0499079326605,
+                    771.6217574382554
+                ],
+                "map_tier": 6,
+                "degree": 54,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 32,
+                "Coordinates": [
+                    2282.520366211329,
+                    962.2099927323729
+                ],
+                "map_tier": 6,
+                "degree": 18,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 33,
+                "Coordinates": [
+                    1847.2681005858817,
+                    1454.1731852200508
+                ],
+                "map_tier": 6,
+                "degree": 259,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 34,
+                "Coordinates": [
+                    1600.3185129243325,
+                    1287.6035851116103
+                ],
+                "map_tier": 6,
+                "degree": 213,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 35,
+                "Coordinates": [
+                    2170.074265168146,
+                    1367.677534108445
+                ],
+                "map_tier": 6,
+                "degree": 311,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 36,
+                "Coordinates": [
+                    2280.409433522563,
+                    1204.0989200519045
+                ],
+                "map_tier": 6,
+                "degree": 341,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 37,
+                "Coordinates": [
+                    1718.0072451628726,
+                    756.7440198180211
+                ],
+                "map_tier": 6,
+                "degree": 122,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 38,
+                "Coordinates": [
+                    1999.251044499946,
+                    1452.8468501620623
+                ],
+                "map_tier": 6,
+                "degree": 282,
+                "map_level": 0
+            }
+        ]
+    ],
+    "6": [
+        [
+            {
+                "id": 39,
+                "Coordinates": [
+                    1510.6460769352677,
+                    1253.760431257583
+                ],
+                "map_tier": 7,
+                "degree": 203,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 40,
+                "Coordinates": [
+                    2228.9186635688247,
+                    1399.8946406211885
+                ],
+                "map_tier": 7,
+                "degree": 314,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 41,
+                "Coordinates": [
+                    1646.2117203845896,
+                    1430.4330174862835
+                ],
+                "map_tier": 7,
+                "degree": 232,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 42,
+                "Coordinates": [
+                    1981.891096662241,
+                    639.621964724337
+                ],
+                "map_tier": 7,
+                "degree": 82,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 43,
+                "Coordinates": [
+                    1504.8312926871267,
+                    920.631664790443
+                ],
+                "map_tier": 7,
+                "degree": 159,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 44,
+                "Coordinates": [
+                    2270.4330174862835,
+                    806.2117203845896
+                ],
+                "map_tier": 7,
+                "degree": 38,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 45,
+                "Coordinates": [
+                    1732.059173014136,
+                    676.959595882525
+                ],
+                "map_tier": 7,
+                "degree": 115,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 46,
+                "Coordinates": [
+                    1819.962942891787,
+                    1513.3080993986105
+                ],
+                "map_tier": 7,
+                "degree": 257,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 47,
+                "Coordinates": [
+                    2361.3911121416704,
+                    1134.1960138907596
+                ],
+                "map_tier": 7,
+                "degree": 353,
+                "map_level": 1,
+                "unique": false
+            }
+        ]
+    ],
+    "7": [
+        [
+            {
+                "id": 48,
+                "Coordinates": [
+                    1519.505122872819,
+                    1392.9008909890404
+                ],
+                "map_tier": 8,
+                "degree": 218,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 49,
+                "Coordinates": [
+                    1990.732681899704,
+                    576.7108168278137
+                ],
+                "map_tier": 8,
+                "degree": 82,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 50,
+                "Coordinates": [
+                    1754.5347732641274,
+                    1560.5459113634174
+                ],
+                "map_tier": 8,
+                "degree": 251,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 51,
+                "Coordinates": [
+                    1554.406125004356,
+                    726.9500987784861
+                ],
+                "map_tier": 8,
+                "degree": 136,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 52,
+                "Coordinates": [
+                    2253.432353557528,
+                    1463.5700454779267
+                ],
+                "map_tier": 8,
+                "degree": 311,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 53,
+                "Coordinates": [
+                    1737.8647597605063,
+                    605.5214773567163
+                ],
+                "map_tier": 8,
+                "degree": 111,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 54,
+                "Coordinates": [
+                    1448.7724409731152,
+                    889.611707816854
+                ],
+                "map_tier": 8,
+                "degree": 158,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 55,
+                "Coordinates": [
+                    2325.894753341683,
+                    774.1363647039002
+                ],
+                "map_tier": 8,
+                "degree": 37,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 56,
+                "Coordinates": [
+                    2376.798856472047,
+                    1302.795688721037
+                ],
+                "map_tier": 8,
+                "degree": 334,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 57,
+                "Coordinates": [
+                    1928.8699289187134,
+                    1588.15788742066
+                ],
+                "map_tier": 8,
+                "degree": 271,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 58,
+                "Coordinates": [
+                    2426.301305383099,
+                    1124.295624549398
+                ],
+                "map_tier": 8,
+                "degree": 355,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 59,
+                "Coordinates": [
+                    1413.002741515007,
+                    1115.4527019499553
+                ],
+                "map_tier": 8,
+                "degree": 184,
+                "map_level": 1,
+                "unique": false
+            }
+        ]
+    ],
+    "8": [
+        [
+            {
+                "id": 60,
+                "Coordinates": [
+                    1530.0574082466187,
+                    661.8377658977448
+                ],
+                "map_tier": 9,
+                "degree": 133,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 61,
+                "Coordinates": [
+                    1762.4002883211042,
+                    530.3844891458554
+                ],
+                "map_tier": 9,
+                "degree": 106,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 62,
+                "Coordinates": [
+                    2489.5889685559864,
+                    1129.832577618073
+                ],
+                "map_tier": 9,
+                "degree": 355,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 63,
+                "Coordinates": [
+                    1860.2343139434358,
+                    1648.632518998801
+                ],
+                "map_tier": 9,
+                "degree": 264,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 64,
+                "Coordinates": [
+                    1522.818861125797,
+                    1491.2931093700995
+                ],
+                "map_tier": 9,
+                "degree": 226,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 65,
+                "Coordinates": [
+                    2324.2987007725437,
+                    675.7012992274564
+                ],
+                "map_tier": 9,
+                "degree": 45,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 66,
+                "Coordinates": [
+                    2264.0965897081123,
+                    1536.6315975093935
+                ],
+                "map_tier": 9,
+                "degree": 307,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 67,
+                "Coordinates": [
+                    1362.8895864875008,
+                    1208.619073424845
+                ],
+                "map_tier": 9,
+                "degree": 193,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 68,
+                "Coordinates": [
+                    2433.898713531053,
+                    1330.645149811167
+                ],
+                "map_tier": 9,
+                "degree": 334,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 69,
+                "Coordinates": [
+                    1367.7177040276622,
+                    932.0164048002057
+                ],
+                "map_tier": 9,
+                "degree": 165,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 70,
+                "Coordinates": [
+                    2029.0978491211774,
+                    518.7402221699239
+                ],
+                "map_tier": 9,
+                "degree": 79,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 71,
+                "Coordinates": [
+                    2474.7808505530993,
+                    941.6775985159547
+                ],
+                "map_tier": 9,
+                "degree": 14,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 72,
+                "Coordinates": [
+                    2087.1678217591175,
+                    1626.7813075271001
+                ],
+                "map_tier": 9,
+                "degree": 287,
+                "map_level": 0
+            }
+        ]
+    ],
+    "9": [
+        [
+            {
+                "id": 73,
+                "Coordinates": [
+                    2369.2207786361596,
+                    630.7792213638404
+                ],
+                "map_tier": 10,
+                "degree": 45,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 74,
+                "Coordinates": [
+                    2554.9071136356606,
+                    1102.1714449639417
+                ],
+                "map_tier": 10,
+                "degree": 358,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 75,
+                "Coordinates": [
+                    1309.3160990509505,
+                    1255.1107907543287
+                ],
+                "map_tier": 10,
+                "degree": 196,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 76,
+                "Coordinates": [
+                    2168.2291875108326,
+                    495.2086813360968
+                ],
+                "map_tier": 10,
+                "degree": 67,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 77,
+                "Coordinates": [
+                    1612.0033000787978,
+                    1635.6407551238515
+                ],
+                "map_tier": 10,
+                "degree": 241,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 78,
+                "Coordinates": [
+                    1875.6841225625556,
+                    1713.7465731062412
+                ],
+                "map_tier": 10,
+                "degree": 266,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 79,
+                "Coordinates": [
+                    2284.3897360347823,
+                    1600.4024751953593
+                ],
+                "map_tier": 10,
+                "degree": 305,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 80,
+                "Coordinates": [
+                    1406.0362623970923,
+                    706.5834867788994
+                ],
+                "map_tier": 10,
+                "degree": 144,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 81,
+                "Coordinates": [
+                    1546.5834867788994,
+                    566.0362623970923
+                ],
+                "map_tier": 10,
+                "degree": 126,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 82,
+                "Coordinates": [
+                    1412.6315583228964,
+                    1462.3295441201249
+                ],
+                "map_tier": 10,
+                "degree": 217,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 83,
+                "Coordinates": [
+                    1306.3530044751801,
+                    915.5737831113396
+                ],
+                "map_tier": 10,
+                "degree": 165,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 84,
+                "Coordinates": [
+                    2500.3700554435345,
+                    821.6026032224329
+                ],
+                "map_tier": 10,
+                "degree": 24,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 85,
+                "Coordinates": [
+                    1831.5841476253702,
+                    450.8885210347671
+                ],
+                "map_tier": 10,
+                "degree": 98,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 86,
+                "Coordinates": [
+                    2440.4024751953593,
+                    1444.3897360347823
+                ],
+                "map_tier": 10,
+                "degree": 325,
+                "map_level": 0
+            }
+        ]
+    ],
+    "10": [
+        [
+            {
+                "id": 87,
+                "Coordinates": [
+                    1361.894714155186,
+                    1500.5624985321374
+                ],
+                "map_tier": 11,
+                "degree": 217,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 88,
+                "Coordinates": [
+                    1798.6505676068746,
+                    391.7931702479393
+                ],
+                "map_tier": 11,
+                "degree": 100,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 89,
+                "Coordinates": [
+                    2310.7771584254397,
+                    500.64903753212377
+                ],
+                "map_tier": 11,
+                "degree": 56,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 90,
+                "Coordinates": [
+                    1376.9121163465402,
+                    640.2161031957606
+                ],
+                "map_tier": 11,
+                "degree": 141,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 91,
+                "Coordinates": [
+                    1234.0158270965735,
+                    946.6581844074498
+                ],
+                "map_tier": 11,
+                "degree": 169,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 92,
+                "Coordinates": [
+                    2563.2704505302936,
+                    1353.0521062619162
+                ],
+                "map_tier": 11,
+                "degree": 337,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 93,
+                "Coordinates": [
+                    1692.4853132381752,
+                    1740.7506281246992
+                ],
+                "map_tier": 11,
+                "degree": 251,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 94,
+                "Coordinates": [
+                    2359.7838968042392,
+                    1623.0878836534596
+                ],
+                "map_tier": 11,
+                "degree": 309,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 95,
+                "Coordinates": [
+                    2567.937893661967,
+                    818.2160982481744
+                ],
+                "map_tier": 11,
+                "degree": 22,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 96,
+                "Coordinates": [
+                    2041.3494323931252,
+                    1768.206829752061
+                ],
+                "map_tier": 11,
+                "degree": 280,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 97,
+                "Coordinates": [
+                    1509.2418354567892,
+                    1645.3601113631985
+                ],
+                "map_tier": 11,
+                "degree": 234,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 98,
+                "Coordinates": [
+                    1236.4474413695523,
+                    1225.2935815832343
+                ],
+                "map_tier": 11,
+                "degree": 192,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 99,
+                "Coordinates": [
+                    1591.9222255355069,
+                    462.97544687270283
+                ],
+                "map_tier": 11,
+                "degree": 118,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 100,
+                "Coordinates": [
+                    2077.2010897414775,
+                    399.087272373612
+                ],
+                "map_tier": 11,
+                "degree": 77,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 101,
+                "Coordinates": [
+                    2616.164294901761,
+                    1019.0935162445777
+                ],
+                "map_tier": 11,
+                "degree": 5,
+                "map_level": 0
+            }
+        ]
+    ],
+    "11": [
+        [
+            {
+                "id": 102,
+                "Coordinates": [
+                    2573.4640127705516,
+                    687.3592087744528
+                ],
+                "map_tier": 12,
+                "degree": 31,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 103,
+                "Coordinates": [
+                    2631.7177839649253,
+                    1353.2028603592412
+                ],
+                "map_tier": 12,
+                "degree": 339,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 104,
+                "Coordinates": [
+                    1259.7829862913927,
+                    1461.1764705882354
+                ],
+                "map_tier": 12,
+                "degree": 210,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 105,
+                "Coordinates": [
+                    1735.5701313546062,
+                    340.2921992625344
+                ],
+                "map_tier": 12,
+                "degree": 104,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 106,
+                "Coordinates": [
+                    2399.7642510591704,
+                    1672.4595094401377
+                ],
+                "map_tier": 12,
+                "degree": 309,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 107,
+                "Coordinates": [
+                    2052.3811989743185,
+                    1830.7710870022481
+                ],
+                "map_tier": 12,
+                "degree": 280,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 108,
+                "Coordinates": [
+                    1165.0662252417205,
+                    1186.099022849556
+                ],
+                "map_tier": 12,
+                "degree": 188,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 109,
+                "Coordinates": [
+                    2242.18427483291,
+                    1770.9264070585284
+                ],
+                "map_tier": 12,
+                "degree": 295,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 110,
+                "Coordinates": [
+                    1287.9807682168623,
+                    653.6976453540658
+                ],
+                "map_tier": 12,
+                "degree": 146,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 111,
+                "Coordinates": [
+                    1853.556563175903,
+                    1839.4519580746482
+                ],
+                "map_tier": 12,
+                "degree": 265,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 112,
+                "Coordinates": [
+                    2091.4920978997934,
+                    337.1861153166677
+                ],
+                "map_tier": 12,
+                "degree": 77,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 113,
+                "Coordinates": [
+                    1171.6536295598985,
+                    934.5362011717634
+                ],
+                "map_tier": 12,
+                "degree": 169,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 114,
+                "Coordinates": [
+                    2439.9234556711754,
+                    522.4503545303265
+                ],
+                "map_tier": 12,
+                "degree": 47,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 115,
+                "Coordinates": [
+                    1471.9001841346792,
+                    1696.7564851234893
+                ],
+                "map_tier": 12,
+                "degree": 234,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 116,
+                "Coordinates": [
+                    1493.697645354066,
+                    447.9807682168623
+                ],
+                "map_tier": 12,
+                "degree": 124,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 117,
+                "Coordinates": [
+                    2682.3529411764707,
+                    1080.0
+                ],
+                "map_tier": 12,
+                "degree": 0,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 118,
+                "Coordinates": [
+                    2544.4829702344314,
+                    1517.267683241739
+                ],
+                "map_tier": 12,
+                "degree": 325,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 119,
+                "Coordinates": [
+                    2289.596039905443,
+                    413.2310938513783
+                ],
+                "map_tier": 12,
+                "degree": 61,
+                "map_level": 0
+            }
+        ]
+    ],
+    "12": [
+        [
+            {
+                "id": 120,
+                "Coordinates": [
+                    2743.8705450381135,
+                    1022.3893593313223
+                ],
+                "map_tier": 13,
+                "degree": 4,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 121,
+                "Coordinates": [
+                    2543.3013239016304,
+                    1621.8275745309838
+                ],
+                "map_tier": 13,
+                "degree": 319,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 122,
+                "Coordinates": [
+                    1104.2856292967215,
+                    1209.19646406852
+                ],
+                "map_tier": 13,
+                "degree": 189,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 123,
+                "Coordinates": [
+                    2255.916615810837,
+                    1834.4810720765954
+                ],
+                "map_tier": 13,
+                "degree": 294,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 124,
+                "Coordinates": [
+                    1434.5585328125694,
+                    411.84714111621986
+                ],
+                "map_tier": 13,
+                "degree": 126,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 125,
+                "Coordinates": [
+                    2161.4646314298366,
+                    290.2047780164107
+                ],
+                "map_tier": 13,
+                "degree": 73,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 126,
+                "Coordinates": [
+                    2745.379247726359,
+                    1108.8228784531243
+                ],
+                "map_tier": 13,
+                "degree": 358,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 127,
+                "Coordinates": [
+                    1977.6106406686777,
+                    256.1294549618864
+                ],
+                "map_tier": 13,
+                "degree": 86,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 128,
+                "Coordinates": [
+                    2700.8871059655535,
+                    1348.880993445793
+                ],
+                "map_tier": 13,
+                "degree": 341,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 129,
+                "Coordinates": [
+                    2533.7501970413305,
+                    527.37684039539
+                ],
+                "map_tier": 13,
+                "degree": 42,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 130,
+                "Coordinates": [
+                    1177.7018582329233,
+                    1442.0429941716852
+                ],
+                "map_tier": 13,
+                "degree": 206,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 131,
+                "Coordinates": [
+                    1204.7649018156753,
+                    667.0588235294118
+                ],
+                "map_tier": 13,
+                "degree": 150,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 132,
+                "Coordinates": [
+                    2662.2981417670767,
+                    717.9570058283149
+                ],
+                "map_tier": 13,
+                "degree": 26,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 133,
+                "Coordinates": [
+                    1948.8228784531245,
+                    1905.3792477263592
+                ],
+                "map_tier": 13,
+                "degree": 272,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 134,
+                "Coordinates": [
+                    1325.9099531320787,
+                    1653.70608948496
+                ],
+                "map_tier": 13,
+                "degree": 224,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 135,
+                "Coordinates": [
+                    1651.119006554207,
+                    1860.8871059655535
+                ],
+                "map_tier": 13,
+                "degree": 251,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 136,
+                "Coordinates": [
+                    1597.3020562359175,
+                    319.77128573692585
+                ],
+                "map_tier": 13,
+                "degree": 113,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 137,
+                "Coordinates": [
+                    2369.8077677418223,
+                    387.3567780027204
+                ],
+                "map_tier": 13,
+                "degree": 57,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 138,
+                "Coordinates": [
+                    1130.2047780164107,
+                    838.5353685701634
+                ],
+                "map_tier": 13,
+                "degree": 163,
+                "map_level": 2,
+                "unique": false
+            }
+        ]
+    ],
+    "13": [
+        [
+            {
+                "id": 139,
+                "Coordinates": [
+                    1719.925885783574,
+                    1946.616198797221
+                ],
+                "map_tier": 14,
+                "degree": 257,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 140,
+                "Coordinates": [
+                    2774.9574613286695,
+                    834.8448929439396
+                ],
+                "map_tier": 14,
+                "degree": 16,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 141,
+                "Coordinates": [
+                    2808.869959089925,
+                    1048.9599770504815
+                ],
+                "map_tier": 14,
+                "degree": 2,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 142,
+                "Coordinates": [
+                    1935.5223756077487,
+                    190.7236970138449
+                ],
+                "map_tier": 14,
+                "degree": 89,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 143,
+                "Coordinates": [
+                    1719.9258857835741,
+                    213.38380120277895
+                ],
+                "map_tier": 14,
+                "degree": 103,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 144,
+                "Coordinates": [
+                    2309.8924552618146,
+                    280.6020011739173
+                ],
+                "map_tier": 14,
+                "degree": 64,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 145,
+                "Coordinates": [
+                    2639.549232644071,
+                    1602.783118509541
+                ],
+                "map_tier": 14,
+                "degree": 324,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 146,
+                "Coordinates": [
+                    1336.4933812743252,
+                    408.75242041362844
+                ],
+                "map_tier": 14,
+                "degree": 131,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 147,
+                "Coordinates": [
+                    1142.102942826608,
+                    648.8046201103166
+                ],
+                "map_tier": 14,
+                "degree": 151,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 148,
+                "Coordinates": [
+                    2809.4117647058824,
+                    1080.0000000000002
+                ],
+                "map_tier": 14,
+                "degree": 360,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 149,
+                "Coordinates": [
+                    2135.1681800862925,
+                    1942.9924341937099
+                ],
+                "map_tier": 14,
+                "degree": 284,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 150,
+                "Coordinates": [
+                    1238.6710600024148,
+                    1651.7028622623807
+                ],
+                "map_tier": 14,
+                "degree": 220,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 151,
+                "Coordinates": [
+                    1502.4464688633725,
+                    1865.3039767074692
+                ],
+                "map_tier": 14,
+                "degree": 242,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 152,
+                "Coordinates": [
+                    1069.4512994022884,
+                    819.9611661524837
+                ],
+                "map_tier": 14,
+                "degree": 163,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 153,
+                "Coordinates": [
+                    2750.3374146257465,
+                    1398.7366704191145
+                ],
+                "map_tier": 14,
+                "degree": 339,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 154,
+                "Coordinates": [
+                    1530.1075447381852,
+                    280.6020011739173
+                ],
+                "map_tier": 14,
+                "degree": 116,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 155,
+                "Coordinates": [
+                    1031.1300409100747,
+                    1111.0400229495185
+                ],
+                "map_tier": 14,
+                "degree": 182,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 156,
+                "Coordinates": [
+                    2503.5066187256743,
+                    1751.2475795863716
+                ],
+                "map_tier": 14,
+                "degree": 311,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 157,
+                "Coordinates": [
+                    2639.549232644071,
+                    557.2168814904592
+                ],
+                "map_tier": 14,
+                "degree": 36,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 158,
+                "Coordinates": [
+                    2503.506618725675,
+                    408.75242041362856
+                ],
+                "map_tier": 14,
+                "degree": 49,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 159,
+                "Coordinates": [
+                    2351.1953798896834,
+                    1857.897057173392
+                ],
+                "map_tier": 14,
+                "degree": 299,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 160,
+                "Coordinates": [
+                    1935.5223756077482,
+                    1969.276302986155
+                ],
+                "map_tier": 14,
+                "degree": 271,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 161,
+                "Coordinates": [
+                    1134.6960232925308,
+                    1497.5535311366277
+                ],
+                "map_tier": 14,
+                "degree": 208,
+                "map_level": 1,
+                "unique": false
+            }
+        ]
+    ],
+    "14": [
+        [
+            {
+                "id": 162,
+                "Coordinates": [
+                    1120.7962823108312,
+                    1599.0089627790258
+                ],
+                "map_tier": 15,
+                "degree": 213,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 163,
+                "Coordinates": [
+                    995.3652490781681,
+                    1310.537335806742
+                ],
+                "map_tier": 15,
+                "degree": 194,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 164,
+                "Coordinates": [
+                    1086.538867314223,
+                    618.0049501181963
+                ],
+                "map_tier": 15,
+                "degree": 151,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 165,
+                "Coordinates": [
+                    976.3327815521505,
+                    947.3762214380554
+                ],
+                "map_tier": 15,
+                "degree": 172,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 166,
+                "Coordinates": [
+                    2776.4978558850885,
+                    662.2580836480556
+                ],
+                "map_tier": 15,
+                "degree": 26,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 167,
+                "Coordinates": [
+                    2519.7053138239626,
+                    339.4256131998277
+                ],
+                "map_tier": 15,
+                "degree": 51,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 168,
+                "Coordinates": [
+                    2670.9278946134646,
+                    1666.6891706044507
+                ],
+                "map_tier": 15,
+                "degree": 322,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 169,
+                "Coordinates": [
+                    2101.829748535296,
+                    144.5670369498731
+                ],
+                "map_tier": 15,
+                "degree": 79,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 170,
+                "Coordinates": [
+                    2836.0258514235747,
+                    1342.666186131493
+                ],
+                "map_tier": 15,
+                "degree": 344,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 171,
+                "Coordinates": [
+                    2118.127611249865,
+                    2012.117125405156
+                ],
+                "map_tier": 15,
+                "degree": 282,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 172,
+                "Coordinates": [
+                    2660.5743868001723,
+                    480.2946861760373
+                ],
+                "map_tier": 15,
+                "degree": 39,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 173,
+                "Coordinates": [
+                    1803.8656845198009,
+                    2025.8380974464364
+                ],
+                "map_tier": 15,
+                "degree": 263,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 174,
+                "Coordinates": [
+                    1223.0629431629081,
+                    1729.904319588969
+                ],
+                "map_tier": 15,
+                "degree": 223,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 175,
+                "Coordinates": [
+                    2871.6352037072998,
+                    1030.1269122861358
+                ],
+                "map_tier": 15,
+                "degree": 3,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 176,
+                "Coordinates": [
+                    1018.9764161935922,
+                    769.752699870239
+                ],
+                "map_tier": 15,
+                "degree": 161,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 177,
+                "Coordinates": [
+                    1346.505683819813,
+                    1841.0526625156556
+                ],
+                "map_tier": 15,
+                "degree": 233,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 178,
+                "Coordinates": [
+                    2276.9780478433986,
+                    196.4483268245907
+                ],
+                "map_tier": 15,
+                "degree": 68,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 179,
+                "Coordinates": [
+                    1689.4626641932578,
+                    155.36524907816806
+                ],
+                "map_tier": 15,
+                "degree": 104,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 180,
+                "Coordinates": [
+                    1294.8143370796342,
+                    360.80616472888767
+                ],
+                "map_tier": 15,
+                "degree": 131,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 181,
+                "Coordinates": [
+                    1594.0749222425982,
+                    1975.471791572454
+                ],
+                "map_tier": 15,
+                "degree": 250,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 182,
+                "Coordinates": [
+                    1936.6311167225879,
+                    127.20396108626244
+                ],
+                "map_tier": 15,
+                "degree": 89,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 183,
+                "Coordinates": [
+                    2367.378783360672,
+                    1921.39711790086
+                ],
+                "map_tier": 15,
+                "degree": 298,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 184,
+                "Coordinates": [
+                    967.6393295465087,
+                    1113.2571674459127
+                ],
+                "map_tier": 15,
+                "degree": 182,
+                "map_level": 0
+            }
+        ]
+    ],
+    "15": [
+        [
+            {
+                "id": 185,
+                "Coordinates": [
+                    2687.140090955853,
+                    413.13529288494317
+                ],
+                "map_tier": 16,
+                "degree": 41,
+                "map_level": 6,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 186,
+                "Coordinates": [
+                    2709.94601258685,
+                    1719.685668078894
+                ],
+                "map_tier": 16,
+                "degree": 321,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 187,
+                "Coordinates": [
+                    2061.465363799408,
+                    73.42163365562726
+                ],
+                "map_tier": 16,
+                "degree": 82,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 188,
+                "Coordinates": [
+                    938.1648071602882,
+                    1343.0819470218564
+                ],
+                "map_tier": 16,
+                "degree": 195,
+                "map_level": 4,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 189,
+                "Coordinates": [
+                    909.0977440021315,
+                    1186.250108545003
+                ],
+                "map_tier": 16,
+                "degree": 186,
+                "map_level": 3,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 190,
+                "Coordinates": [
+                    2333.435834844107,
+                    2008.5920887096559
+                ],
+                "map_tier": 16,
+                "degree": 294,
+                "map_level": 7,
+                "unique": true
+            }
+        ],
+        [
+            {
+                "id": 191,
+                "Coordinates": [
+                    1119.0102457456378,
+                    454.19821802191893
+                ],
+                "map_tier": 16,
+                "degree": 142,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 192,
+                "Coordinates": [
+                    2935.07755062112,
+                    1026.8020397718783
+                ],
+                "map_tier": 16,
+                "degree": 3,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 193,
+                "Coordinates": [
+                    1937.7398578374266,
+                    2096.31577484132
+                ],
+                "map_tier": 16,
+                "degree": 271,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 194,
+                "Coordinates": [
+                    2458.6473462323397,
+                    1942.0159471519437
+                ],
+                "map_tier": 16,
+                "degree": 302,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 195,
+                "Coordinates": [
+                    991.4079112903445,
+                    1493.4358348441074
+                ],
+                "map_tier": 16,
+                "degree": 204,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 196,
+                "Coordinates": [
+                    2131.3361186665225,
+                    2074.258267098833
+                ],
+                "map_tier": 16,
+                "degree": 282,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 197,
+                "Coordinates": [
+                    1522.8332999826675,
+                    2015.6661098622453
+                ],
+                "map_tier": 16,
+                "degree": 247,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 198,
+                "Coordinates": [
+                    1490.420966889454,
+                    158.76479058862867
+                ],
+                "map_tier": 16,
+                "degree": 115,
+                "map_level": 7,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 199,
+                "Coordinates": [
+                    2901.835192839712,
+                    816.9180529781436
+                ],
+                "map_tier": 16,
+                "degree": 15,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 200,
+                "Coordinates": [
+                    913.4216336556273,
+                    938.5346362005924
+                ],
+                "map_tier": 16,
+                "degree": 172,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 201,
+                "Coordinates": [
+                    2412.794719873924,
+                    190.97479180183768
+                ],
+                "map_tier": 16,
+                "degree": 61,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 202,
+                "Coordinates": [
+                    1087.3560396874248,
+                    1663.0235776556515
+                ],
+                "map_tier": 16,
+                "degree": 215,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 203,
+                "Coordinates": [
+                    2809.0252081981625,
+                    1572.7947198739237
+                ],
+                "map_tier": 16,
+                "degree": 331,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 204,
+                "Coordinates": [
+                    2250.9304534717453,
+                    118.90817727316505
+                ],
+                "map_tier": 16,
+                "degree": 71,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 205,
+                "Coordinates": [
+                    1366.3904397023725,
+                    1932.4839655351134
+                ],
+                "map_tier": 16,
+                "degree": 237,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 206,
+                "Coordinates": [
+                    2914.258267098833,
+                    1291.336118666523
+                ],
+                "map_tier": 16,
+                "degree": 348,
+                "map_level": 5,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 207,
+                "Coordinates": [
+                    1760.988967300283,
+                    76.04385144211881
+                ],
+                "map_tier": 16,
+                "degree": 99,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 208,
+                "Coordinates": [
+                    2586.8647071150567,
+                    1847.1400909558533
+                ],
+                "map_tier": 16,
+                "degree": 311,
+                "map_level": 0
+            }
+        ],
+        [
+            {
+                "id": 209,
+                "Coordinates": [
+                    2782.0159471519437,
+                    541.35265376766
+                ],
+                "map_tier": 16,
+                "degree": 32,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 210,
+                "Coordinates": [
+                    2875.1699110106174,
+                    1427.653416274562
+                ],
+                "map_tier": 16,
+                "degree": 340,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 211,
+                "Coordinates": [
+                    1796.1233968211209,
+                    2088.893970609532
+                ],
+                "map_tier": 16,
+                "degree": 263,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 212,
+                "Coordinates": [
+                    977.5448819462302,
+                    699.2234156337081
+                ],
+                "map_tier": 16,
+                "degree": 158,
+                "map_level": 1,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 213,
+                "Coordinates": [
+                    1336.9764223443485,
+                    247.35603968742487
+                ],
+                "map_tier": 16,
+                "degree": 125,
+                "map_level": 2,
+                "unique": false
+            }
+        ],
+        [
+            {
+                "id": 214,
+                "Coordinates": [
+                    2586.8647071150567,
+                    312.859909044147
+                ],
+                "map_tier": 16,
+                "degree": 49,
+                "map_level": 0
+            }
+        ]
+    ]
+}
