@@ -56,6 +56,12 @@ class Maps:
 
 class Map:
 
+    def get_paths(self):
+        _paths = []
+        for path in self.paths:
+            _paths.append(path)
+        return _paths
+
     def map_info(self):
         return self.id, self.Coordinates, self.map_tier, self.degree, self.map_level
 
@@ -65,7 +71,14 @@ class Map:
         else:
             self.map_level += 1
 
+    def check_maxlvl(self):
+        pass
+
+    def add_path(self, path):
+        self.paths.append(path)
+
     def __init__(self, _map_id, _map_center, _tier, _degree, _map_level):
+        self.paths = []
         self.id = _map_id
         self.Coordinates = _map_center
         self.map_tier = _tier
@@ -82,22 +95,22 @@ class Paths:
     
     def add_path(self, path):
         self.paths.append(path)
-        #print(path)
 
     def get_paths(self):
         return self.paths
 
 class Path:
 
-    def __init__(self, _map1, _map2, length):
+    def __init__(self, _map1, _map2, length, hidden=False):
         self.map1 = _map1
         self.map2 = _map2
         self.length = length
+        self.hidden = hidden
+
+    def get_info(self):
+        return self.map1, self.map2, self.length, self.hidden
 
 
-
-# Empty map list
-map_dict = {}
 
 phase_color = {
     0 : (255, 255, 255),
@@ -118,7 +131,7 @@ map_color = {
     4 : (255, 0, 0),
     5 : (255, 0, 255),
     6 : (0, 255, 255),
-    7 : (255, 215, 0)
+    7 : (255, 140, 0)
     }
 
 
@@ -162,26 +175,46 @@ def draw_tier(draw, _tier):
     draw.ellipse((W/2-_size, H/2-_size, W/2+_size, H/2+_size), fill=None, outline=(phase_color[phase]), width=1)
 
 
-def calculate_paths(maps):
-    
+def calculate_paths(maps, max_len):
+    logging.debug(f'\n\n============================= Calculate paths =============================')
     paths = Paths()
-    logging.debug(f'============================= Calculate paths =============================')
     for map_obj in maps.get_maps():
         for map_obj1 in maps.get_maps():
             _len = get_length(map_obj.Coordinates, map_obj1.Coordinates)
-            if (_len) <= 100 and (map_obj.id != map_obj1.id):
-                logging.debug(f'Length between {map_obj.id} and {map_obj1.id} is {_len}')
-                paths.add_path(
-                    Path(
-                        map_obj,
-                        map_obj1,
-                        _len) 
-                        )
+            # Typical path
+            if (_len) <= max_len and \
+                (map_obj.id != map_obj1.id) and \
+                (map_obj.unique == False) and \
+                (map_obj1.unique == False):
+                logging.debug(f'typical_path: Length between {map_obj.id} and {map_obj1.id} is {_len}')
+                # Make path
+                new_path = Path(map_obj, 
+                    map_obj1, 
+                    _len)
+                # Add path to Paths object    
+                paths.add_path(new_path)
+                # Attach path to map
+                map_obj.add_path(new_path)
+                logging.debug(f'Map_paths, id: {map_obj.id} paths_count:{len(map_obj.paths)}')    
+            # Hidden path
+            # if map_obj.degree == map_obj1.degree:
+            #     logging.debug(f'hidden_path: between {map_obj.id} and {map_obj1.id} is {_len}')
+            #     paths.add_path(
+            #         Path(
+            #             map_obj,
+            #             map_obj1,
+            #             _len,
+            #             hidden=True)
+            #             )
+    
+    
+
+
     return paths
 
 
 def print_paths(draw, _paths):
-    logging.debug(f'Drawing paths\n=========================================================')
+    logging.debug(f'\n\n============================= Drawing paths =============================')
     logging.debug(f'{_paths}')
 
     for _path in _paths:
@@ -192,7 +225,10 @@ def print_paths(draw, _paths):
         logging.debug(f'map1_coords:{map1_coords}')
         logging.debug(f'map2_coords:{map2_coords}')
         logging.debug(f'{map1_coords},{map1_coords}, {map2_coords},{map2_coords}')
-        draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(255,255,255), width=2)
+        if _path.hidden:
+            draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(128, 70, 0), width=2)
+        else:
+            draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(255,255,255), width=2)
 
 
 def draw_map_obj(draw, map_objs, _size=15, draw_id=False):
@@ -244,12 +280,16 @@ def draw_map_obj(draw, map_objs, _size=15, draw_id=False):
                 id_offset = 11
             elif len(str(map_obj.id)) == 3:
                 id_offset = 16
+            if map_obj.unique == True:
+                fill = (255,255,255,128)
+            else:
+                fill = (0,0,0,128)
             draw.text(
                         (map_obj.Coordinates[0]-id_offset,
                         map_obj.Coordinates[1]-10),
                         str(map_obj.id),
                         font=fnt,
-                        fill=(0,0,0,128))
+                        fill=fill)
 
 
 def generate_global(request):
@@ -262,7 +302,7 @@ def generate_global(request):
     maps_obj = Maps()
 
     global_id += 1
-    logging.debug(f'\n\n\n\n\n=========================================================\nGeneration started, global_id: {global_id} \n=========================================================')
+    logging.debug(f'\n\n\n\n\n============================= Generation started, global_id: {global_id} =============================')
     ##############
 
     im = Image.new('RGB', (W, H), (0, 0, 0))
@@ -302,20 +342,23 @@ def generate_global(request):
         # logging.debug(f'degree: {degree}, collision: {degree_collision}')
 
         tier_maps = maps_obj.get_maps_from_tier(_tier)
-        # for map in tier_maps:
-            # print(map.id,'in tier:', _tier)
         for map_obj in tier_maps:
             inf = map_obj.map_info()
             logging.debug(f'Map_obj loops: {inf}')
 
-            logging.debug(f'Collision: map_obj.coll:{map_obj.degree}, generated degree: {degree}')
+            logging.debug(f'Collision: map degree:{map_obj.degree}, generated degree: {degree}')
 
             if ((degree) <= (map_obj.degree)+degree_collision and (degree) >= (map_obj.degree)-degree_collision) or \
                 ((degree+360) <= (map_obj.degree)+degree_collision and (degree+360) >= (map_obj.degree)-degree_collision) or \
                 ((degree-360) <= (map_obj.degree)+degree_collision and (degree-360) >= (map_obj.degree)-degree_collision):
                 # Check map_level is valid
                 logging.debug(f'Collision detected! {map_obj.id}')
-                map_obj.increase_level()
+                old_lvl = map_obj.map_level
+                if map_obj.unique != True:
+                    map_obj.increase_level()
+                else:
+                    logging.debug(f'Map_already_unique map id:{map_obj.id} map_lvl:{map_obj.map_level}')
+                    define_map(R, _tier+1, _size, maps_obj, degree_collision=degree_collision, draw_id=True)
 
                 id_offset = 0
                 if len(str(map_obj.id)) == 1:
@@ -324,6 +367,8 @@ def generate_global(request):
                     id_offset = 11
                 elif len(str(map_obj.id)) == 3:
                     id_offset = 16
+
+                logging.debug(f'== OLD Map_defined! ==\nmap_id:{map_obj.id}\nmap_lvl:{map_obj.map_level}\nold_lvl:{old_lvl}')
 
                 return None
 
@@ -339,11 +384,8 @@ def generate_global(request):
         map_draw_coords = (W/2+x_offset-_size,H/2+y_offset-_size, W/2+x_offset+_size,H/2+y_offset+_size)
 
         map_id += 1
-        
-        # map_info = [{'id': map_id, 'Coordinates' : map_center, 'map_tier': _tier, 'degree' : degree, 'map_level' : 0}]
 
         map_obj = Map(map_id, map_center, _tier, degree, 0)
-        logging.debug(f'New_object: {map_obj}')
 
         tier_maps1.append(map_obj)
         maps_obj.add_map(map_obj)
@@ -359,12 +401,12 @@ def generate_global(request):
         id_offset = len(str(map_id))*5
         if draw_id:
             draw.text((map_center[0]-id_offset,map_center[1]-10), str(map_id), font=fnt, fill=(0,0,0,128))
-
+        logging.debug(f'== NEW Map_defined! ==\nmap_id:{map_obj.id}\nmap_lvl:{map_obj.map_level}')
 
     for tier in range(tiers+1):
         
         tier_maps1 = []
-        maps = tier * 7
+        maps = tier * 7 + tier
         if tier == 0:
             logging.debug(f'Tier: {tier} Village')
             draw_tier(draw, tier)
@@ -376,15 +418,12 @@ def generate_global(request):
         # Define map with drawing size
         for map in range(maps):
             define_map(R, tier+1, 15, maps_obj, degree_collision=(30 - tier*1.5),draw_id=True)
-        # print(maps_obj)
-        # map_dict.update({tier : tier_maps1})
-    logging.debug(f'Generation complete\n=========================================================')
+    logging.debug(f'\n\n============================= Generation complete =============================')
+    print('Generation completed')
     all_maps = maps_obj.get_maps()
 
-    logging.debug(f'Objects dict:{map_dict}')
-
     # Generating paths
-    paths = calculate_paths(maps_obj)
+    paths = calculate_paths(maps_obj, 120)
     print_paths(draw, paths.get_paths())
     draw_map_obj(draw, maps_obj.get_maps(),draw_id=True)
     
@@ -398,8 +437,13 @@ def generate_global(request):
     # Save to json
     map_file = open(settings.MEDIA_DIR+"/map.json", "w")
     for map_obj in maps_obj.get_maps():
-        inf = map_obj.map_info()
-        map_file.writelines(str(inf) + '\n')
+        map_inf = map_obj.map_info()
+        
+        map_file.writelines(str(map_inf) + '\n')
+        for path in map_obj.get_paths():
+            map_file.writelines(str(path.get_info()) + '\n')
+        map_file.writelines('===========\n')
+
     map_file.close()
 
     return render(request, 'map/index.html')
@@ -409,9 +453,7 @@ def index(request):
 
 def outjson(request):
     map_file = open(settings.MEDIA_DIR+"/map.json", "r")
-    # print(settings.MEDIA_DIR+"/map.json")
     content = map_file.read()
-    print(content[1])
+
     context = {'map_info':content}
-    print(context)
     return render(request, 'map/json.html', context)
