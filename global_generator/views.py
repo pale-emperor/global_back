@@ -28,27 +28,76 @@ R = min(W, H)/((tiers + 2)*2)
 logging.debug(f'Current dir: {os.path.dirname(__file__)}')
 logging.debug(f'Set tier radius : {R}')
 
-# Create picture
-# im = Image.new('RGB', (W, H), (0, 0, 0))
-# draw = ImageDraw.Draw(im)
-
 # Set font
 fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf", 18)
 small_fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf", 12)
 big_fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf", 24)
 
+class Maps:
+
+    def __init__(self):
+        self.maps = []
+
+    def add_map(self, map):
+        logging.debug(f'Map added {map.id}')
+        self.maps.append(map)
+        leng = len(self.maps)
+        logging.debug(f'Total_maps_count: {leng}')
+
+    def get_maps(self):
+        return self.maps
+
+    def get_maps_from_tier(self, tier):
+        tier_maps = []
+        for map in self.maps:
+            if map.tier == tier:
+                tier_maps.append(map)
+        return tier_maps
+
+class Map:
+
+    def map_info(self):
+        return self.id, self.Coordinates, self.map_tier, self.degree, self.map_level
+
+    def increase_level(self):
+        if self.map_level == len(map_color)-1:
+            self.unique = True
+        else:
+            self.map_level += 1
+
+    def __init__(self, _map_id, _map_center, _tier, _degree, _map_level):
+        self.id = _map_id
+        self.Coordinates = _map_center
+        self.map_tier = _tier
+        self.degree = _degree
+        self.map_level = _map_level
+        self.tier = _tier
+        self.unique = False
+
+
+class Paths:
+
+    def __init__(self):
+        self.paths = []
+    
+    def add_path(self, path):
+        self.paths.append(path)
+        #print(path)
+
+    def get_paths(self):
+        return self.paths
+
+class Path:
+
+    def __init__(self, _map1, _map2, length):
+        self.map1 = _map1
+        self.map2 = _map2
+        self.length = length
 
 
 
 # Empty map list
 map_dict = {}
-
-####################################
-
-
-
-####################################
-
 
 phase_color = {
     0 : (255, 255, 255),
@@ -86,29 +135,18 @@ def print_on_start(draw):
         draw.text((W - 160, offset), 'Map LVL: ' + str(map_level), font=big_fnt, fill=(R,G,B,128))
         offset += 50
 
-
 debug = False
 
 # Get image center
 center = (W/2, W/2, H/2, H/2)
 
 
-def maps_info(map_dict):
-    for tier in range(tiers):
-        logging.debug(f'Tier: {tier}')
-        for _map in (map_dict[tier]):
-            logging.debug(_map)
-
-
-def get_map_with_coords(map_dict):
-    coords_id = []
-    for tier in range(tiers):
-        # logging.debug(f'Tier:  {tier}')
-        for _map in (map_dict[tier]):
-            # logging.debug(_map[0]['Coordinates'])
-            coords_id.append((_map[0]['Coordinates'],_map[0]['id']))
-    return coords_id
-    logging.debug(coords)
+def get_map_with_coords(maps):
+    maps = []
+    for _map in maps:
+        # logging.debug(_map[0]['Coordinates'])
+        maps.append((_map.Coordinates,_map.id))
+    return maps
 
 
 def get_length(_coords1, _coords2):
@@ -124,24 +162,21 @@ def draw_tier(draw, _tier):
     draw.ellipse((W/2-_size, H/2-_size, W/2+_size, H/2+_size), fill=None, outline=(phase_color[phase]), width=1)
 
 
-def calculate_paths(_map_dict):
-    paths = []
+def calculate_paths(maps):
+    
+    paths = Paths()
     logging.debug(f'============================= Calculate paths =============================')
-    # Run for all maps
-    for _map in get_map_with_coords(_map_dict):
-        for __map in get_map_with_coords(_map_dict):
-            _len = get_length(_map[0],__map[0])
-            if (_len) <= 100 and (_map[1] != __map[1]):
-                logging.debug(f'Length between {_map[1]} and {__map[1]} is {_len}')
-                paths.append( 
-                        (
-                        {
-                        'map1':{'id':_map[1], 'coords':_map[0]}, 
-                        'map2':{'id':__map[1], 'coords':__map[0]},
-                        'length':_len
-                        }
+    for map_obj in maps.get_maps():
+        for map_obj1 in maps.get_maps():
+            _len = get_length(map_obj.Coordinates, map_obj1.Coordinates)
+            if (_len) <= 100 and (map_obj.id != map_obj1.id):
+                logging.debug(f'Length between {map_obj.id} and {map_obj1.id} is {_len}')
+                paths.add_path(
+                    Path(
+                        map_obj,
+                        map_obj1,
+                        _len) 
                         )
-                    )
     return paths
 
 
@@ -151,9 +186,8 @@ def print_paths(draw, _paths):
 
     for _path in _paths:
         logging.debug(f'Path:{_path}')
-        print(_path.keys())
-        map1_coords = _path['map1']['coords']
-        map2_coords = _path['map2']['coords']
+        map1_coords = _path.map1.Coordinates
+        map2_coords = _path.map2.Coordinates
 
         logging.debug(f'map1_coords:{map1_coords}')
         logging.debug(f'map2_coords:{map2_coords}')
@@ -161,61 +195,61 @@ def print_paths(draw, _paths):
         draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(255,255,255), width=2)
 
 
-def print_maps(draw, _map_dict, _size=15, draw_id=False):
+def draw_map_obj(draw, map_objs, _size=15, draw_id=False):
     logging.debug(f'============================= Starting drawing maps =============================')
-    for _tiers in _map_dict.keys():
-        for _map in _map_dict[_tiers]:
-            logging.debug(f'Drawing map : {_map}')
-            # Drawing map
-            try:
-                if _map[0]['unique'] == True:
-                    logging.debug(f'Map UNIQUE!!! : {_map}')
-                    draw.ellipse(
-                            (
-                            int(_map[0]['Coordinates'][0]-_size),
-                            int(_map[0]['Coordinates'][1]-_size),
-                            int(_map[0]['Coordinates'][0]+_size),
-                            int(_map[0]['Coordinates'][1]+_size)
-                            ),
-                            fill=(0,0,0),
-                            # fill=map_color[_map[0]['map_level']],
-                            outline=(255, 255, 255), width=2)
-                else:
-                    draw.ellipse(
-                        (
-                        int(_map[0]['Coordinates'][0]-_size),
-                        int(_map[0]['Coordinates'][1]-_size),
-                        int(_map[0]['Coordinates'][0]+_size),
-                        int(_map[0]['Coordinates'][1]+_size)
-                        ),
-                        fill=map_color[_map[0]['map_level']],
-                        outline=(255, 255, 255), width=4)
-            except:
+    for map_obj in map_objs:
+        logging.debug(f'Drawing map : {map_obj}')
+        logging.debug(f'Drawing map : {map_obj.Coordinates}')
+        # Drawing map
+        try:
+            if map_obj.unique == True:
+                logging.debug(f'Map UNIQUE!!! : {map_obj}')
                 draw.ellipse(
                         (
-                        int(_map[0]['Coordinates'][0]-_size),
-                        int(_map[0]['Coordinates'][1]-_size),
-                        int(_map[0]['Coordinates'][0]+_size),
-                        int(_map[0]['Coordinates'][1]+_size)
+                        int(map_obj.Coordinates[0]-_size),
+                        int(map_obj.Coordinates[1]-_size),
+                        int(map_obj.Coordinates[0]+_size),
+                        int(map_obj.Coordinates[1]+_size)
                         ),
-                        fill=map_color[_map[0]['map_level']],
+                        fill=(0,0,0),
+                        # fill=map_color[map_obj.map_level],
                         outline=(255, 255, 255), width=2)
-            
-            # Drawing ID
-            if draw_id:
-                id_offset = 0
-                if len(str(_map[0]['id'])) == 1:
-                    id_offset = 6
-                elif len(str(_map[0]['id'])) == 2:
-                    id_offset = 11
-                elif len(str(_map[0]['id'])) == 3:
-                    id_offset = 16
-                draw.text(
-                            (_map[0]['Coordinates'][0]-id_offset,
-                            _map[0]['Coordinates'][1]-10),
-                            str(_map[0]['id']),
-                            font=fnt,
-                            fill=(0,0,0,128))
+            else:
+                draw.ellipse(
+                    (
+                    int(map_obj.Coordinates[0]-_size),
+                    int(map_obj.Coordinates[1]-_size),
+                    int(map_obj.Coordinates[0]+_size),
+                    int(map_obj.Coordinates[1]+_size)
+                    ),
+                    fill=map_color[map_obj.map_level],
+                    outline=(255, 255, 255), width=4)
+        except:
+            draw.ellipse(
+                    (
+                    int(map_obj.Coordinates[0]-_size),
+                    int(map_obj.Coordinates[1]-_size),
+                    int(map_obj.Coordinates[0]+_size),
+                    int(map_obj.Coordinates[1]+_size)
+                    ),
+                    fill=map_color[map_obj.map_level],
+                    outline=(255, 255, 255), width=2)
+        
+        # Drawing ID
+        if draw_id:
+            id_offset = 0
+            if len(str(map_obj.id)) == 1:
+                id_offset = 6
+            elif len(str(map_obj.id)) == 2:
+                id_offset = 11
+            elif len(str(map_obj.id)) == 3:
+                id_offset = 16
+            draw.text(
+                        (map_obj.Coordinates[0]-id_offset,
+                        map_obj.Coordinates[1]-10),
+                        str(map_obj.id),
+                        font=fnt,
+                        fill=(0,0,0,128))
 
 
 def generate_global(request):
@@ -223,6 +257,9 @@ def generate_global(request):
     global global_id
     global tiers
     global phases
+
+    # Maps container
+    maps_obj = Maps()
 
     global_id += 1
     logging.debug(f'\n\n\n\n\n=========================================================\nGeneration started, global_id: {global_id} \n=========================================================')
@@ -252,7 +289,7 @@ def generate_global(request):
 
     map_id = 0
 
-    def define_map(_R, _tier, _size, tier_maps, degree_collision=20, draw_id=False):
+    def define_map(_R, _tier, _size, maps_obj, degree_collision=20, draw_id=False):
         global R
         nonlocal map_id
         # map_level = 0
@@ -261,26 +298,31 @@ def generate_global(request):
 
         map_size = 30
         degree = random.randint(0,360)
-        logging.debug(f'map_id: {map_id}')
-        logging.debug(f'degree: {degree}, collision: {degree_collision}')
-        for _map in tier_maps:
-            # logging.debug('Map loops:',_map)
-            if ((degree) <= (_map[0]['degree'])+degree_collision and (degree) >= (_map[0]['degree'])-degree_collision) or \
-                ((degree+360) <= (_map[0]['degree'])+degree_collision and (degree+360) >= (_map[0]['degree'])-degree_collision):
+        # logging.debug(f'map_id: {map_id}')
+        # logging.debug(f'degree: {degree}, collision: {degree_collision}')
+
+        tier_maps = maps_obj.get_maps_from_tier(_tier)
+        # for map in tier_maps:
+            # print(map.id,'in tier:', _tier)
+        for map_obj in tier_maps:
+            inf = map_obj.map_info()
+            logging.debug(f'Map_obj loops: {inf}')
+
+            logging.debug(f'Collision: map_obj.coll:{map_obj.degree}, generated degree: {degree}')
+
+            if ((degree) <= (map_obj.degree)+degree_collision and (degree) >= (map_obj.degree)-degree_collision) or \
+                ((degree+360) <= (map_obj.degree)+degree_collision and (degree+360) >= (map_obj.degree)-degree_collision) or \
+                ((degree-360) <= (map_obj.degree)+degree_collision and (degree-360) >= (map_obj.degree)-degree_collision):
                 # Check map_level is valid
-                if _map[0]['map_level'] == len(map_color)-1:
-                    logging.debug(f'Map on maximum level, set map : {_map[0]} to unique')
-                    _map[0]['unique'] = True
-                else:
-                    _map[0]['unique'] = False
-                    _map[0]['map_level'] += 1
+                logging.debug(f'Collision detected! {map_obj.id}')
+                map_obj.increase_level()
 
                 id_offset = 0
-                if len(str(_map[0]['id'])) == 1:
+                if len(str(map_obj.id)) == 1:
                     id_offset = 6
-                elif len(str(_map[0]['id'])) == 2:
+                elif len(str(map_obj.id)) == 2:
                     id_offset = 11
-                elif len(str(_map[0]['id'])) == 3:
+                elif len(str(map_obj.id)) == 3:
                     id_offset = 16
 
                 return None
@@ -297,8 +339,14 @@ def generate_global(request):
         map_draw_coords = (W/2+x_offset-_size,H/2+y_offset-_size, W/2+x_offset+_size,H/2+y_offset+_size)
 
         map_id += 1
-        map_info = [{'id': map_id, 'Coordinates' : map_center, 'map_tier': _tier, 'degree' : degree, 'map_level' : 0}]
-        tier_maps.append(map_info)
+        
+        # map_info = [{'id': map_id, 'Coordinates' : map_center, 'map_tier': _tier, 'degree' : degree, 'map_level' : 0}]
+
+        map_obj = Map(map_id, map_center, _tier, degree, 0)
+        logging.debug(f'New_object: {map_obj}')
+
+        tier_maps1.append(map_obj)
+        maps_obj.add_map(map_obj)
         
         
         if draw_now:
@@ -314,7 +362,8 @@ def generate_global(request):
 
 
     for tier in range(tiers+1):
-        tier_maps = []
+        
+        tier_maps1 = []
         maps = tier * 7
         if tier == 0:
             logging.debug(f'Tier: {tier} Village')
@@ -326,23 +375,31 @@ def generate_global(request):
         logging.debug(f'=================')
         # Define map with drawing size
         for map in range(maps):
-            define_map(R, tier+1, 15, tier_maps, degree_collision=(30 - tier*1.5),draw_id=True)
-        map_dict.update({tier : tier_maps})
+            define_map(R, tier+1, 15, maps_obj, degree_collision=(30 - tier*1.5),draw_id=True)
+        # print(maps_obj)
+        # map_dict.update({tier : tier_maps1})
     logging.debug(f'Generation complete\n=========================================================')
+    all_maps = maps_obj.get_maps()
 
-    logging.debug(maps_info(map_dict))
+    logging.debug(f'Objects dict:{map_dict}')
 
-    paths = calculate_paths(map_dict)
-
-    print_paths(draw, paths)
-    print_maps(draw, map_dict,draw_id=True)
+    # Generating paths
+    paths = calculate_paths(maps_obj)
+    print_paths(draw, paths.get_paths())
+    draw_map_obj(draw, maps_obj.get_maps(),draw_id=True)
     
     logging.debug(f'Save jpg to: {settings.MEDIA_DIR}/global_out.jpg')
     # Out image
     im.save(settings.MEDIA_DIR+'/global_out.jpg', quality=100)
+
+    # Remove old json
+    os.remove(settings.MEDIA_DIR+"/map.json")
+
     # Save to json
     map_file = open(settings.MEDIA_DIR+"/map.json", "w")
-    map_file.writelines(str(json.dumps(map_dict)))
+    for map_obj in maps_obj.get_maps():
+        inf = map_obj.map_info()
+        map_file.writelines(str(inf) + '\n')
     map_file.close()
 
     return render(request, 'map/index.html')
