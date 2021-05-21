@@ -1,3 +1,4 @@
+from django import shortcuts
 from django.shortcuts import render
 
 # Create your views here.
@@ -33,6 +34,7 @@ fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf
 small_fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf", 12)
 big_fnt = ImageFont.truetype("/home/wh1te/global_back/global_generator/res/lucon.ttf", 24)
 
+
 class Maps:
 
     def __init__(self):
@@ -54,6 +56,40 @@ class Maps:
                 tier_maps.append(map)
         return tier_maps
 
+
+class Paths:
+
+    def __init__(self):
+        self.paths = []
+    
+    def add_path(self, path):
+        self.paths.append(path)
+
+    def get_paths(self):
+        return self.paths
+
+
+class Path:
+
+    def __init__(self, _map1, _map2, length, hidden=False, shortcut=False):
+        self.map1 = _map1
+        self.map2 = _map2
+        self.length = length
+        self.hidden = hidden
+        self.shortcut = shortcut
+
+    def get_json_info(self):
+        map1_inf = self.map1
+        map2_inf = self.map2
+        return self.map1.map_info(), self.map2.map_info(), self.length, self.hidden
+
+    def get_maps(self):
+        return self.map1, self.map1
+
+    def get_info(self):
+        return self.map1, self.map2, self.length, self.hidden
+
+
 class Map:
 
     def get_paths(self):
@@ -61,6 +97,12 @@ class Map:
         for path in self.paths:
             _paths.append(path)
         return _paths
+
+    def map_json_info(self):
+        _paths = []
+        for path in self.paths:
+            _paths.append(path.get_json_info())
+        return self.id, self.Coordinates, self.map_tier, self.degree, self.map_level, _paths
 
     def map_info(self):
         return self.id, self.Coordinates, self.map_tier, self.degree, self.map_level
@@ -74,7 +116,7 @@ class Map:
     def check_maxlvl(self):
         pass
 
-    def add_path(self, path):
+    def add_path(self, path:Path):
         self.paths.append(path)
 
     def __init__(self, _map_id, _map_center, _tier, _degree, _map_level):
@@ -88,27 +130,42 @@ class Map:
         self.unique = False
 
 
-class Paths:
+
+class Chains:
 
     def __init__(self):
-        self.paths = []
+        self.chains = {}
+
+    def add_chain(self, chain):
+        self.chains[chain.id] = chain
+
+    def get_chains(self):
+        _chains = []
+        for chain_id in self.chains:
+            _chains.append(self.chains[chain_id])
+        return _chains
+
+class Chain:
     
-    def add_path(self, path):
+    def __init__(self, paths, chain_id):
+        logging.debug(f'create_chain {chain_id} with paths: {paths}')    
+        self.id = chain_id
+        self.paths = []
+        for path in paths:
+            self.paths.append(path)
+
+
+    def add_path(self, path : Path):
         self.paths.append(path)
 
-    def get_paths(self):
-        return self.paths
 
-class Path:
+    def get_maps(self):
+        _maps = []
+        for path in self.paths:
+            for map in path.get_maps():
+                _maps.append(map)
+        return _maps
 
-    def __init__(self, _map1, _map2, length, hidden=False):
-        self.map1 = _map1
-        self.map2 = _map2
-        self.length = length
-        self.hidden = hidden
-
-    def get_info(self):
-        return self.map1, self.map2, self.length, self.hidden
 
 
 
@@ -135,6 +192,23 @@ map_color = {
     }
 
 
+def get_maps_in_radius(map, r):
+    global maps_obj
+
+
+def check_chains_for_map(chains : Chains, maps):
+    debug = chains.get_chains()
+
+    for chain in chains.get_chains():
+        for map in chain.get_maps():
+            for _map in maps:
+                if map.id == _map.id:
+                    logging.debug(f'Found_map_id: {_map.id} in chain: {chain.id} with map {map.id}')
+                    return chain
+    logging.debug(f'not_found_maps: {maps} in any chain')
+    return None
+
+
 def increase_maps(_maps, tier):
     _maps = (tier * 7)
     return _maps
@@ -154,12 +228,50 @@ debug = False
 center = (W/2, W/2, H/2, H/2)
 
 
-def get_map_with_coords(maps):
-    maps = []
-    for _map in maps:
-        # logging.debug(_map[0]['Coordinates'])
-        maps.append((_map.Coordinates,_map.id))
-    return maps
+def get_shortcut_maps(maps_obj, obj, tier_min_diff, tier_max_diff, N=0):
+    if tier_max_diff < 1:
+        return None
+    logging.debug(f'calculate_shortcuts for{obj.id}')
+    def takelen(elem):
+        return elem[0]
+
+    _maps = []
+    for map in maps_obj:
+        # Get N closest maps
+        # If map argument passed check if map not the same
+        if type(obj) == Map:
+            if map.tier - obj.tier > tier_min_diff and \
+                abs(map.tier - obj.tier) <= tier_max_diff and \
+                abs(map.degree - obj.degree) > 15 and \
+                len(map.get_paths()) == 1:
+                if (map.unique or obj.unique) == False:
+                    _maps.append((get_length(obj.Coordinates, map.Coordinates), map.id, map))
+    _maps.sort(key=takelen)
+    
+    if N == 0:
+        return _maps
+    else:
+        return _maps[0:N]
+
+
+def get_closest_maps(maps_obj, obj, N=0):
+    
+    def takelen(elem):
+        return elem[0]
+
+    _maps = []
+    for map in maps_obj:
+        # Get N closest maps
+        # If map argument passed check if map not the same
+        if type(obj) == Map:
+            if obj.id != map.id:
+                _maps.append((get_length(obj.Coordinates, map.Coordinates), map.id, map))
+    _maps.sort(key=takelen)
+    
+    if N == 0:
+        return _maps
+    else:
+        return _maps[0:N]
 
 
 def get_length(_coords1, _coords2):
@@ -195,7 +307,7 @@ def calculate_paths(maps, max_len):
                 paths.add_path(new_path)
                 # Attach path to map
                 map_obj.add_path(new_path)
-                logging.debug(f'Map_paths, id: {map_obj.id} paths_count:{len(map_obj.paths)}')    
+                
             # Hidden path
             # if map_obj.degree == map_obj1.degree:
             #     logging.debug(f'hidden_path: between {map_obj.id} and {map_obj1.id} is {_len}')
@@ -207,10 +319,35 @@ def calculate_paths(maps, max_len):
             #             hidden=True)
             #             )
     
-    
-
-
     return paths
+
+
+def add_hidden_paths(normal_paths, maps_obj:Maps, hidden_count, sc_count):
+    all_maps = maps_obj.get_maps()
+    for map in all_maps:
+        if len(map.get_paths()) == 0:
+            logging.debug(f'{map.id} calculate_additional_paths')
+            # Get closest maps
+            closest_maps = get_closest_maps(all_maps, map, hidden_count)
+            logging.debug(f'{map.id} closest_maps: {closest_maps}')
+            # Hiddent paths
+            for _map in closest_maps:
+                # Create path
+                hidden_path = Path(map, _map[2], _map[0], hidden=True)
+                map.add_path(hidden_path)
+                normal_paths.add_path(hidden_path)
+
+            # Get shortcuts
+            # shortcuts = get_shortcut_maps(all_maps, map, 2, map.tier-4, sc_count)
+            # for _map in shortcuts:
+            #     # Create path
+            #     short_path = Path(map, _map[2], _map[0], hidden=True, shortcut=True)
+            #     map.add_path(short_path)
+            #     normal_paths.add_path(short_path)
+                
+
+
+            
 
 
 def print_paths(draw, _paths):
@@ -225,10 +362,12 @@ def print_paths(draw, _paths):
         logging.debug(f'map1_coords:{map1_coords}')
         logging.debug(f'map2_coords:{map2_coords}')
         logging.debug(f'{map1_coords},{map1_coords}, {map2_coords},{map2_coords}')
-        if _path.hidden:
-            draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(128, 70, 0), width=2)
-        else:
+        if _path.hidden == False:
             draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(255,255,255), width=2)
+        elif _path.hidden == True and _path.shortcut == False:
+            draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(128, 70, 0), width=2)
+        elif _path.hidden == True and _path.shortcut == True:
+            draw.line((map1_coords[0],map1_coords[1], map2_coords[0],map2_coords[1]), fill=(204,204,0), width=2)
 
 
 def draw_map_obj(draw, map_objs, _size=15, draw_id=False):
@@ -292,14 +431,16 @@ def draw_map_obj(draw, map_objs, _size=15, draw_id=False):
                         fill=fill)
 
 
-def generate_global(request):
+# Create global_chains object
+global_chains = Chains()
 
+
+def generate_global(request):
+    # Maps container
+    maps_obj = Maps()
     global global_id
     global tiers
     global phases
-
-    # Maps container
-    maps_obj = Maps()
 
     global_id += 1
     logging.debug(f'\n\n\n\n\n============================= Generation started, global_id: {global_id} =============================')
@@ -357,8 +498,9 @@ def generate_global(request):
                 if map_obj.unique != True:
                     map_obj.increase_level()
                 else:
+                    # If map on maximum level generate another
                     logging.debug(f'Map_already_unique map id:{map_obj.id} map_lvl:{map_obj.map_level}')
-                    define_map(R, _tier+1, _size, maps_obj, degree_collision=degree_collision, draw_id=True)
+                    define_map(R, _tier, _size, maps_obj, degree_collision=degree_collision, draw_id=True)
 
                 id_offset = 0
                 if len(str(map_obj.id)) == 1:
@@ -424,6 +566,8 @@ def generate_global(request):
 
     # Generating paths
     paths = calculate_paths(maps_obj, 120)
+    add_hidden_paths(paths, maps_obj, 2, 1)
+
     print_paths(draw, paths.get_paths())
     draw_map_obj(draw, maps_obj.get_maps(),draw_id=True)
     
@@ -434,15 +578,16 @@ def generate_global(request):
     # Remove old json
     os.remove(settings.MEDIA_DIR+"/map.json")
 
+    # Create dict for json
+    _json = {}
+    for map_obj in maps_obj.get_maps():
+        
+        _map = map_obj.map_json_info()
+        _json[_map[0]] = {'map':_map[0:-1],'paths':_map[-1]}
+
     # Save to json
     map_file = open(settings.MEDIA_DIR+"/map.json", "w")
-    for map_obj in maps_obj.get_maps():
-        map_inf = map_obj.map_info()
-        
-        map_file.writelines(str(map_inf) + '\n')
-        for path in map_obj.get_paths():
-            map_file.writelines(str(path.get_info()) + '\n')
-        map_file.writelines('===========\n')
+    map_file.writelines(json.dumps(_json) + '\n')
 
     map_file.close()
 
